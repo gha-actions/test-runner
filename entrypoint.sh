@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Get the value of the input parameter 'language'
-LANGUAGE=$1
+# config
+language=${LANGUAGE:-}
 
 # Run test commands based on the provided language
-case $LANGUAGE in
+case $language in
     python)
         # Example: Run Python tests using pytest
         pip install -r requirements.txt
@@ -17,7 +17,7 @@ case $LANGUAGE in
         ;;
     # Add more cases for other languages and frameworks
     *)
-        echo "Unsupported language: $LANGUAGE"
+        echo "Unsupported language: $language"
         exit 1
         ;;
 esac

@@ -1,0 +1,13 @@
+name: 'Multi-Language Test Runner'
+description: 'Run test cases for different languages and frameworks'
+author: 'Jaynath Ray'
+inputs:
+  language:
+    description: 'The programming language used in the project'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'git-merge'  
+  color: 'purple'

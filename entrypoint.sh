@@ -6,7 +6,7 @@ language=${LANGUAGE:-}
 # Run test commands based on the provided language
 case $language in
     python)
-        sudo apt-get install python3-pip
+        apt-get install python3-pip
         # Example: Run Python tests using pytest
         pip install -r requirements.txt
         pytest

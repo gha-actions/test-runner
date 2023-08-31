@@ -1,0 +1,16 @@
+name: Run All Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run custom run-all-tests action
+        uses: ./
+        with:
+          language: python # Specify the language used in your project

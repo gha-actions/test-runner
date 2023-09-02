@@ -35,7 +35,7 @@ jobs:
     - name: Run tests 🧪
       uses: gha-actions/test-runner@0.0.2 # Don't use @master or @v1 unless you're happy to test the latest version
       env:
-        LANGUAGE:'node'
+        LANGUAGE: 'node'
 ```
 
 ```yaml
@@ -63,7 +63,7 @@ jobs:
     - name: Run tests 🧪
       uses: gha-actions/test-runner@0.0.2 # Don't use @master or @v1 unless you're happy to test the latest version
       env:
-        LANGUAGE:'node'
+        LANGUAGE: 'node'
 
 ```
 

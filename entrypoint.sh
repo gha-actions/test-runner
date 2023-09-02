@@ -8,7 +8,7 @@ case $language in
     python)
         add-apt-repository universe
         apt update
-        apt install python3-pip
+        apt install -y python3-pip
         # Example: Run Python tests using pytest
         pip install -r requirements.txt
         pytest

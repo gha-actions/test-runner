@@ -10,13 +10,16 @@ case $language in
         apt update
         apt install -y python3-pip
         # Example: Run Python tests using pytest
-        sudo -H install -r requirements.txt
+        pip install -r requirements.txt
         pytest
         ;;
+    node)
+    react)
     javascript)
-        # Example: Run JavaScript tests using Jest
+        # Install NPM dependencies 📦
         npm install
-        npm test
+        # Unit tests 🧪
+        npm test -- --coverage
         ;;
     # Add more cases for other languages and frameworks
     *)

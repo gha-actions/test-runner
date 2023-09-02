@@ -13,9 +13,7 @@ case $language in
         pip install -r requirements.txt
         pytest
         ;;
-    node)
-    react)
-    javascript)
+    node | react | javascript)
         # Install NPM dependencies 📦
         npm install
         # Unit tests 🧪

@@ -1,9 +1,16 @@
 name: 'GHA Test Runner 🧪'
 description: 'Run test cases for different languages and frameworks'
 author: 'Jaynath Ray'
+inputs:
+  language:
+    description: 'The type of application (node or python)'
+    required: true
+    default: 'node'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'Dockerfile.${{ inputs.language }}'
+  env: 
+    LANGUAGE: ${{ inputs.language }}
 branding:
   icon: 'shield'  
   color: 'green'

@@ -6,7 +6,8 @@ WORKDIR /github/workspace
 
 # Install necessary tools, dependencies, or language runtimes here
 RUN apt update && \
-    apt install -y python3 python3-pip nodejs npm pytest
+    apt install -y python3 python3-pip nodejs npm && \
+    pip3 install pytest
     
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /entrypoint.sh

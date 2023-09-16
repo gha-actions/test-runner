@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # config
-language=${LANGUAGE:-}
+language=${APP_LANGUAGE:-}
 
 # Run test commands based on the provided language
 case $language in

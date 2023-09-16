@@ -12,5 +12,5 @@ jobs:
 
       - name: Run custom run-all-tests action
         uses: ./
-        env:
-          LANGUAGE: python # Specify the language used in your project
+        with:
+          language: 'python' # Specify the language used in your project

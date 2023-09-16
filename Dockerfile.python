@@ -1,0 +1,22 @@
+# Python Dockerfile
+FROM python:3.8-slim
+
+# Set the working directory inside the container
+WORKDIR /github/workspace
+
+# Install necessary Python tools and dependencies
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        python3-pip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install pytest using pip
+RUN pip3 install pytest
+
+# Copy the entrypoint script into the container
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Run the entrypoint script when the container starts
+ENTRYPOINT ["/entrypoint.sh"]

@@ -2,7 +2,7 @@
 FROM alpine:latest as builder
 
 
-ARG APP_LANGUAGE
+ARG APP_LANGUAGE=python
 ENV APP_LANGUAGE=${APP_LANGUAGE}
 
 # Run the shell script to determine the Dockerfile and image name

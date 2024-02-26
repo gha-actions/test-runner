@@ -10,7 +10,7 @@ inputs:
 runs:
   using: 'docker'
   image:
-    name: 'Dockerfile.'${{ inputs.language }}
+    name: 'Dockerfile'
   args:
     - APP_LANGUAGE=${{ inputs.language }}
 branding:

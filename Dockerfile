@@ -28,8 +28,8 @@ FROM builder as final
 # Optionally, you may need to copy files or perform other setup steps here, based on your Dockerfiles for node and python.
 
 # Copy the entrypoint script into the container (uncomment if needed)
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
 
 # Run the entrypoint script when the container starts (uncomment if needed)
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]

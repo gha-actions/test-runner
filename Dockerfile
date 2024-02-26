@@ -2,7 +2,6 @@
 FROM alpine:latest as builder
 
 ARG APP_LANGUAGE=python
-ENV APP_LANGUAGE=${APP_LANGUAGE}
 
 # Copy the necessary Dockerfiles into the build stage
 COPY Dockerfile.node Dockerfile.node
@@ -21,6 +20,9 @@ RUN if [ "$APP_LANGUAGE" = "node" ]; then \
       echo "Invalid app language specified: $APP_LANGUAGE"; \
       exit 1; \
     fi
+
+# Export APP_LANGUAGE environment variable for use in entrypoint.sh
+ENV APP_LANGUAGE=${APP_LANGUAGE}
 
 # Use the selected Dockerfile to build the application
 FROM builder as final

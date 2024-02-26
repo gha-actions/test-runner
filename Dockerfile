@@ -1,7 +1,6 @@
 # Use a base image that has the necessary tools for running the shell script
 FROM alpine:latest as builder
 
-
 ARG APP_LANGUAGE=python
 ENV APP_LANGUAGE=${APP_LANGUAGE}
 
@@ -20,12 +19,13 @@ RUN if [ "$APP_LANGUAGE" = "node" ]; then \
     fi
 
 # Use the selected Dockerfile to build the application
-FROM $DOCKERFILE as final
+FROM ${DOCKERFILE} as final
 
-# # Copy the entrypoint script into the container
-# COPY entrypoint.sh /entrypoint.sh
-# RUN chmod +x /entrypoint.sh
+# Optionally, you may need to copy files or perform other setup steps here, based on your Dockerfiles for node and python.
 
-# # Run the entrypoint script when the container starts
-# ENTRYPOINT ["/entrypoint.sh"]
+# Copy the entrypoint script into the container (uncomment if needed)
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
+# Run the entrypoint script when the container starts (uncomment if needed)
+ENTRYPOINT ["/entrypoint.sh"]

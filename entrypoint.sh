@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Ensure APP_LANGUAGE is properly set
+if [ -z "$APP_LANGUAGE" ]; then
+    echo "APP_LANGUAGE environment variable is not set"
+    exit 1
+fi
+
 # config
 language=${APP_LANGUAGE:-}
 
